@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyla Qhori Agustin | Badminton Life & Instagram Hub (Pastel Edition)</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pastel: {
+                            bg1: '#f0f9ff',
+                            bg2: '#e0f2fe',
+                            bg3: '#dbeafe',
+                            card: 'rgba(255, 255, 255, 0.75)',
+                            cardHover: 'rgba(255, 255, 255, 0.90)',
+                            sky: '#7dd3fc',
+                            powder: '#93c5fd',
+                            baby: '#bfdbfe',
+                            cyan: '#a5f3fc',
+                            mint: '#a7f3d0',
+                            pink: '#fbcfe8',
+                            purple: '#e9d5ff',
+                            yellow: '#fef08a',
+                            textDark: '#0f172a',
+                            textMuted: '#475569'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        display: ['Fredoka', 'sans-serif']
+                    },
+                    animation: {
+                        'float-slow': 'float 5s ease-in-out infinite',
+                        'float-fast': 'float 3s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2.5s infinite alternate',
+                        'heartbeat': 'heartbeat 1.3s infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-16px) rotate(5deg)' }
+                        },
+                        pulseGlow: {
+                            '0%': { filter: 'drop-shadow(0 0 12px rgba(125, 211, 252, 0.4))' },
+                            '100%': { filter: 'drop-shadow(0 0 28px rgba(147, 197, 253, 0.8))' }
+                        },
+                        heartbeat: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '15%': { transform: 'scale(1.12)' },
+                            '30%': { transform: 'scale(1)' },
+                            '45%': { transform: 'scale(1.06)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #dbeafe 100%);
+            color: #0f172a;
+            overflow-x: hidden;
+        }
+
+        @media (min-width: 1024px) {
+            body {
+                cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="%230284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="9" r="6"/><path d="M10.8 13.2 4 20"/><path d="M15 5v8"/><path d="M11 9h8"/></svg>'), auto;
+            }
+        }
+        
+        .font-display {
+            font-family: 'Fredoka', cursive;
+        }
+
+        .glass-box-pastel {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(147, 197, 253, 0.45);
+            box-shadow: 0 10px 35px -10px rgba(56, 189, 248, 0.18);
+        }
+
+        .glass-box-hover {
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .glass-box-hover:hover {
+            transform: translateY(-6px) scale(1.01);
+            border-color: rgba(56, 189, 248, 0.75);
+            box-shadow: 0 18px 40px -8px rgba(147, 197, 253, 0.35);
+        }
+
+        .glow-text-pastel {
+            background: linear-gradient(135deg, #0284c7 0%, #38bdf8 50%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ig-pastel-btn {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #f472b6 100%);
+        }
+
+        .ig-story-border-pastel {
+            background: linear-gradient(45deg, #38bdf8, #818cf8, #f472b6);
+            padding: 3px;
+        }
+
+        .neon-border-pastel {
+            box-shadow: 0 0 25px rgba(186, 230, 253, 0.8), inset 0 0 15px rgba(224, 242, 254, 0.5);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f0f9ff;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #7dd3fc, #93c5fd);
+            border-radius: 6px;
+        }
+
+        .bg-pastel-grid {
+            background-size: 36px 36px;
+            background-image: 
+                linear-gradient(to right, rgba(56, 189, 248, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+        }
+
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 0.8s infinite;
+            color: #0284c7;
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    </style>
+</head>
+<body class="bg-pastel-grid min-h-screen relative text-slate-800 selection:bg-sky-200 selection:text-slate-900">
+
+    <!-- Soft Background Ambient Glows -->
+    <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-sky-200/50 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse-glow"></div>
+    <div class="fixed bottom-0 right-10 w-[600px] h-[600px] bg-blue-200/40 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+
+    <!-- Floating Cute Stickers -->
+    <div class="fixed top-28 left-8 text-3xl pointer-events-none animate-float-slow opacity-80 hidden md:block">🏸</div>
+    <div class="fixed top-1/2 right-6 text-4xl pointer-events-none animate-float-fast opacity-75 hidden md:block" style="animation-delay: 1.5s;">☁️</div>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 px-3 py-3 md:px-8">
+        <div class="max-w-7xl mx-auto glass-box-pastel rounded-2xl px-4 py-3 flex items-center justify-between neon-border-pastel">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-sky-300 via-blue-200 to-indigo-200 p-0.5 shadow-md shadow-sky-300/40 group-hover:rotate-12 transition-transform">
+                    <div class="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
+                        <i class="fa-solid fa-shuttlecock text-sky-500 text-xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                </div>
+                <div>
+                    <span class="font-display font-extrabold text-xl tracking-wide glow-text-pastel">Keyla Qhori</span>
+                    <span class="text-[11px] block text-sky-600 font-semibold -mt-1 flex items-center gap-1">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Badminton Life
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-700">
+                <a href="#hero" class="hover:text-sky-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-house text-xs text-sky-500"></i> Beranda</a>
+                <a href="#instagram" class="hover:text-sky-600 transition-colors flex items-center gap-1.5"><i class="fa-brands fa-instagram text-xs text-pink-400"></i> Instagram</a>
+                <a href="#story" class="hover:text-sky-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-heart-pulse text-xs text-rose-400"></i> Alasan Suka</a>
+                <a href="#game" class="hover:text-sky-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-gamepad text-xs text-amber-500"></i> Mini Game</a>
+                <a href="#guestbook" class="hover:text-sky-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-comments text-xs text-indigo-400"></i> Pesan</a>
+            </div>
+
+            <!-- CTA Instagram Direct Button -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="https://www.instagram.com/7sky_keyla?stkn=MTFvM3VmNmg2cWtnaw==" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl ig-pastel-btn text-white font-extrabold text-xs uppercase tracking-wider shadow-md shadow-sky-300/50 hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
+                    <i class="fa-brands fa-instagram text-sm"></i> @7sky_keyla
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-2xl text-sky-600 p-2 focus:outline-none">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden mt-2 glass-box-pastel rounded-2xl p-5 flex-col gap-3 font-semibold text-sm animate-fadeIn">
+            <a href="#hero" class="py-2 hover:text-sky-600 border-b border-sky-100 flex items-center gap-2"><i class="fa-solid fa-house text-sky-500"></i> Beranda</a>
+            <a href="#instagram" class="py-2 hover:text-sky-600 border-b border-sky-100 flex items-center gap-2"><i class="fa-brands fa-instagram text-pink-400"></i> Profil Instagram @7sky_keyla</a>
+            <a href="#story" class="py-2 hover:text-sky-600 border-b border-sky-100 flex items-center gap-2"><i class="fa-solid fa-heart-pulse text-rose-400"></i> Alasan Suka Badminton</a>
+            <a href="#game" class="py-2 hover:text-sky-600 border-b border-sky-100 flex items-center gap-2"><i class="fa-solid fa-gamepad text-amber-500"></i> Main Game Smash</a>
+            <a href="#guestbook" class="py-2 hover:text-sky-600 flex items-center gap-2"><i class="fa-solid fa-comments text-indigo-400"></i> Buku Tamu</a>
+        </div>
+    </nav>
+
+    <section id="hero" class="pt-32 pb-16 md:pt-40 md:pb-24 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <!-- Hero Left Content -->
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                
+                <!-- Instagram Mini Badge Header -->
+                <a href="https://www.instagram.com/7sky_keyla?stkn=MTFvM3VmNmg2cWtnaw==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-box-pastel text-xs md:text-sm font-bold text-slate-700 border-sky-200 hover:border-sky-400 transition-all group">
+                    <span class="w-3.5 h-3.5 rounded-full ig-story-border-pastel flex items-center justify-center">
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                    </span>
+                    <span>Follow Keyla di IG: <strong class="text-sky-600 group-hover:underline">@7sky_keyla</strong></span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-sky-500"></i>
+                </a>
+
+                <!-- Title -->
+                <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight text-slate-800">
+                    Hallo, Aku <br>
+                    <span class="glow-text-pastel">Keyla Qhori</span> <br class="hidden sm:inline">
+                    <span class="typing-cursor text-2xl sm:text-4xl lg:text-5xl font-bold text-sky-700" id="typingText"></span>
+                </h1>
+
+                <p class="text-slate-600 text-base md:text-xl max-w-2xl leading-relaxed mx-auto lg:mx-0 font-normal">
+                    Selamat datang di lapak digital aku! Tempat cerita keseruan <span class="text-sky-600 font-bold underline decoration-sky-300 underline-offset-4">Badminton</span> — olahraga tercepat, terseru, dan paling bikin sehat tanpa terasa lelah!
+                </p>
+
+                <!-- Hero Buttons -->
+                <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                    <a href="https://www.instagram.com/7sky_keyla?stkn=MTFvM3VmNmg2cWtnaw==" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-2xl ig-pastel-btn text-white font-extrabold text-sm md:text-base shadow-lg shadow-sky-300/50 hover:scale-105 active:scale-95 transition-transform flex items-center gap-2">
+                        <i class="fa-brands fa-instagram text-lg"></i> Follow Instagram Keyla
+                    </a>
+                    <button onclick="trigger3DSmash()" class="px-7 py-3.5 rounded-2xl glass-box-pastel hover:bg-sky-100 text-sky-700 font-extrabold text-sm md:text-base border-sky-300 hover:border-sky-400 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-bolt text-amber-500"></i> Smash Raket 3D!
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hero Right 3D Racket Canvas -->
+            <div class="lg:col-span-5 relative flex items-center justify-center min-h-[400px] md:min-h-[500px]">
+                <div class="absolute w-80 h-80 md:w-[420px] md:h-[420px] rounded-full bg-gradient-to-tr from-sky-200 via-blue-100 to-pink-100 blur-3xl animate-pulse-glow"></div>
+
+                <div id="racket3dBox" class="w-full h-[400px] md:h-[500px] relative z-10 rounded-3xl glass-box-pastel border-sky-300 cursor-grab active:cursor-grabbing overflow-hidden shadow-xl">
+                    <canvas id="racketCanvas" class="w-full h-full"></canvas>
+
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full glass-box-pastel text-xs text-sky-700 font-bold pointer-events-none flex items-center gap-2 border-sky-300 shadow-md">
+                        <i class="fa-solid fa-arrows-spin text-sky-500 animate-spin"></i> Geser & Putar Raket 3D Keyla
+                    </div>
+
+                    <div id="smashTextOverlay" class="absolute top-10 left-1/2 -translate-x-1/2 opacity-0 transition-opacity duration-300 font-display font-extrabold text-3xl text-amber-500 drop-shadow-[0_0_15px_rgba(251,191,36,0.8)] pointer-events-none">
+                        BOOM! SMASH! 🏸✨
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="instagram" class="py-16 px-4 relative">
+        <div class="max-w-5xl mx-auto space-y-8">
+            <div class="text-center space-y-3">
+                <span class="px-4 py-1.5 rounded-full bg-sky-200/70 text-sky-800 border border-sky-300 text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2">
+                    <i class="fa-brands fa-instagram text-pink-500"></i> Official Instagram Connect
+                </span>
+                <h2 class="font-display text-3xl md:text-5xl font-extrabold text-slate-800">
+                    Ikuti Keseruan Keyla Di <span class="bg-gradient-to-r from-sky-500 via-indigo-500 to-pink-500 bg-clip-text text-transparent">Instagram</span> 📸
+                </h2>
+                <p class="text-slate-600 text-sm max-w-md mx-auto">
+                    Kunjungi profil Instagram resmi Keyla untuk melihat update seputar rutinitas badminton dan daily activity!
+                </p>
+            </div>
+
+            <!-- Instagram Interactive Card Mockup -->
+            <div class="glass-box-pastel rounded-3xl p-6 md:p-8 border-sky-300 shadow-xl relative overflow-hidden glass-box-hover">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-pink-200/40 rounded-full blur-2xl pointer-events-none"></div>
+
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    
+                    <!-- Left: Profile Info -->
+                    <div class="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+                        <div class="relative">
+                            <div class="w-24 h-24 rounded-full ig-story-border-pastel shadow-lg">
+                                <div class="w-full h-full bg-white rounded-full flex items-center justify-center border-2 border-slate-100 overflow-hidden">
+                                    <i class="fa-solid fa-user text-4xl text-sky-400"></i>
+                                </div>
+                            </div>
+                            <span class="absolute bottom-1 right-1 w-6 h-6 bg-sky-400 text-white rounded-full flex items-center justify-center text-xs font-extrabold border-2 border-white">✓</span>
+                        </div>
+
+                        <div class="space-y-1.5">
+                            <div class="flex items-center justify-center sm:justify-start gap-2">
+                                <h3 class="font-display text-2xl font-extrabold text-slate-800">@7sky_keyla</h3>
+                                <i class="fa-solid fa-circle-check text-sky-500 text-sm"></i>
+                            </div>
+                            <p class="text-xs text-slate-600 font-medium">Keyla Qhori Agustin • Badminton Lifestyle & Daily</p>
+                            <p class="text-xs text-sky-600 font-bold">🏸 "Main 30 Mins = Fun & Health 100%"</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Direct Link Button & Stats -->
+                    <div class="flex flex-col items-center md:items-end gap-3 w-full md:w-auto">
+                        <a href="https://www.instagram.com/7sky_keyla?stkn=MTFvM3VmNmg2cWtnaw==" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl ig-pastel-btn text-white font-extrabold text-sm shadow-md shadow-sky-300/40 hover:scale-105 active:scale-95 transition-transform flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-instagram text-lg"></i> Kunjungi Profile @7sky_keyla
+                        </a>
+                        <span class="text-[11px] text-slate-500">Klik untuk langsung membuka aplikasi Instagram</span>
+                    </div>
+
+                </div>
+
+                <!-- Story Highlights Preview Badges -->
+                <div class="mt-8 pt-6 border-t border-sky-100 grid grid-cols-3 sm:grid-cols-6 gap-3 text-center">
+                    <div class="space-y-1 group cursor-pointer">
+                        <div class="w-14 h-14 mx-auto rounded-full bg-sky-100 border border-sky-300 flex items-center justify-center text-xl text-sky-600 group-hover:scale-110 transition-transform">🏸</div>
+                        <span class="text-[10px] text-slate-700 font-bold block">Smash</span>
+                    </div>
+                    <div class="space-y-1 group cursor-pointer">
+                        <div class="w-14 h-14 mx-auto rounded-full bg-pink-100 border border-pink-300 flex items-center justify-center text-xl text-pink-500 group-hover:scale-110 transition-transform">⚡</div>
+                        <span class="text-[10px] text-slate-700 font-bold block">Cardio 30M</span>
+                    </div>
+                    <div class="space-y-1 group cursor-pointer">
+                        <div class="w-14 h-14 mx-auto rounded-full bg-amber-100 border border-amber-300 flex items-center justify-center text-xl text-amber-500 group-hover:scale-110 transition-transform">🏆</div>
+                        <span class="text-[10px] text-slate-700 font-bold block">Match</span>
+                    </div>
+                    <div class="space-y-1 group cursor-pointer">
+                        <div class="w-14 h-14 mx-auto rounded-full bg-purple-100 border border-purple-300 flex items-center justify-center text-xl text-purple-500 group-hover:scale-110 transition-transform">🔥</div>
+                        <span class="text-[10px] text-slate-700 font-bold block">Spirit</span>
+                    </div>
+                    <div class="space-y-1 group cursor-pointer">
+                        <div class="w-14 h-14 mx-auto rounded-full bg-emerald-100 border border-emerald-300 flex items-center justify-center text-xl text-emerald-500 group-hover:scale-110 transition-transform">✨</div>
+                        <span class="text-[10px] text-slate-700 font-bold block">Daily</span>
+                    </div>
+                    <div class="space-y-1 group cursor-pointer">
+                        <div class="w-14 h-14 mx-auto rounded-full bg-blue-100 border border-blue-300 flex items-center justify-center text-xl text-blue-500 group-hover:scale-110 transition-transform">❤️</div>
+                        <span class="text-[10px] text-slate-700 font-bold block">Friends</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="story" class="py-20 px-4 relative">
+        <div class="max-w-6xl mx-auto space-y-12">
+            
+            <div class="text-center space-y-3">
+                <span class="px-4 py-1.5 rounded-full bg-sky-200/80 text-sky-800 border border-sky-300 text-xs font-bold uppercase tracking-wider">
+                    Alasan Hobi Keyla
+                </span>
+                <h2 class="font-display text-3xl md:text-5xl font-extrabold text-slate-800">
+                    "Bikin Sehat Tanpa <span class="glow-text-pastel">Terasa Olahraga!"</span> 🏸
+                </h2>
+                <p class="text-slate-600 text-sm md:text-base max-w-xl mx-auto">
+                    Kombinasi unik yang bikin Keyla selalu kangen kembali ke lapangan bulutangkis.
+                </p>
+            </div>
+
+            <!-- Quote Feature Box -->
+            <div class="glass-box-pastel rounded-3xl p-8 md:p-12 border-sky-300 relative glass-box-hover overflow-hidden">
+                <div class="absolute -bottom-10 -right-10 text-9xl text-sky-300/20 pointer-events-none font-display">🏸</div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-8 space-y-5 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 text-sky-600 text-sm font-bold">
+                            <i class="fa-solid fa-quote-left text-2xl text-sky-400"></i> Keyla's Badminton Mindset
+                        </div>
+
+                        <p class="text-slate-800 text-xl md:text-3xl font-extrabold leading-snug font-display">
+                            “Main <span class="text-sky-600 underline decoration-sky-300 underline-offset-8">30 menit aja</span> <span class="text-rose-500">jantung kerja maksimal</span>, tapi karna asik banget jadi <span class="text-amber-500">nggak berasa capeknya!</span>”
+                        </p>
+
+                        <div class="pt-2 flex items-center justify-center lg:justify-start gap-3">
+                            <div class="w-10 h-10 rounded-full bg-sky-200 flex items-center justify-center text-sky-700 font-bold">
+                                KQ
+                            </div>
+                            <div>
+                                <div class="font-bold text-slate-800 text-sm">Keyla Qhori Agustin</div>
+                                <div class="text-xs text-sky-600">Badminton Player & Instagrammer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Vital Gauge Simulators -->
+                    <div class="lg:col-span-4 space-y-4">
+                        
+                        <div class="glass-box-pastel rounded-2xl p-4 border-rose-200 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-500 flex items-center justify-center text-xl animate-heartbeat">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-500 font-bold uppercase">Heart Rate Zone</div>
+                                    <div class="text-sm font-extrabold text-slate-800">135 - 165 BPM</div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-lg">Active Cardio</span>
+                        </div>
+
+                        <div class="glass-box-pastel rounded-2xl p-4 border-sky-200 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl animate-bounce">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-500 font-bold uppercase">Stamina Booster</div>
+                                    <div class="text-sm font-extrabold text-slate-800">Full Energy⚡</div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-bold text-sky-700 bg-sky-100 px-2.5 py-1 rounded-lg">Super Segar</span>
+                        </div>
+
+                        <div class="glass-box-pastel rounded-2xl p-4 border-amber-200 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-500 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-face-laugh-squint"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-500 font-bold uppercase">Rasa Capek</div>
+                                    <div class="text-sm font-extrabold text-slate-800">0% (Kalah Sama Asik)</div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-bold text-amber-700 bg-amber-100 px-2.5 py-1 rounded-lg">100% Fun</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 3 Highlights Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="glass-box-pastel rounded-3xl p-6 glass-box-hover border-sky-200 space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-2xl font-bold">
+                        ⚡
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-800">Refleks Kencang</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Melatih fokus mata dan reaksi kilat saat mengembalikan smash shuttlecock lawan ke area kosong.
+                    </p>
+                </div>
+
+                <div class="glass-box-pastel rounded-3xl p-6 glass-box-hover border-pink-200 space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-pink-100 text-pink-500 flex items-center justify-center text-2xl font-bold">
+                        💪
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-800">Bakar Kalori Cepat</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        30 menit saja sudah cukup membakar hingga 250+ kalori dengan gerakan lari, melompat, dan menjangkau.
+                    </p>
+                </div>
+
+                <div class="glass-box-pastel rounded-3xl p-6 glass-box-hover border-amber-200 space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-500 flex items-center justify-center text-2xl font-bold">
+                        😃
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-800">Stress Relief Paling Pas</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Suara ketukan senar raket menyentuh kok (*plak!*) bikin kepuasan tersendiri dan menghilangkan penat!
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="game" class="py-16 px-4 relative">
+        <div class="max-w-4xl mx-auto glass-box-pastel rounded-3xl p-6 md:p-10 border-sky-300 text-center space-y-6 relative overflow-hidden shadow-xl">
+            
+            <div class="space-y-2">
+                <span class="px-4 py-1.5 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider">
+                    Interactive Mini Game
+                </span>
+                <h2 class="font-display text-3xl md:text-4xl font-extrabold text-slate-800">
+                    Smash The <span class="glow-text-pastel">Shuttlecock!</span> 🏸
+                </h2>
+                <p class="text-slate-600 text-xs md:text-sm">
+                    Klik / Tap kok yang berterbangan secepat mungkin sebelum menghilang!
+                </p>
+            </div>
+
+            <!-- Game Arena Box -->
+            <div id="gameArena" class="relative w-full h-64 md:h-80 rounded-2xl bg-sky-50/90 border-2 border-dashed border-sky-300 overflow-hidden flex items-center justify-center cursor-pointer">
+                
+                <div class="absolute bottom-0 inset-x-0 h-10 border-t-2 border-sky-200 bg-sky-100/50 pointer-events-none flex items-center justify-center text-[10px] text-sky-600 font-bold">
+                    PLAYING AREA
+                </div>
+
+                <!-- Start Screen -->
+                <div id="gameStartScreen" class="space-y-4 z-10">
+                    <i class="fa-solid fa-shuttlecock text-5xl text-sky-500 animate-bounce"></i>
+                    <div>
+                        <button onclick="startGame()" class="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-sky-400 to-blue-400 text-white font-extrabold text-sm shadow-md shadow-sky-300/50 hover:scale-105 active:scale-95 transition-transform">
+                            <i class="fa-solid fa-play"></i> Mulai Main Game Smash!
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Active Targets Container -->
+                <div id="targetContainer" class="absolute inset-0 pointer-events-auto"></div>
+
+            </div>
+
+            <!-- Game Stats Bar -->
+            <div class="flex items-center justify-around glass-box-pastel rounded-2xl p-4 border-sky-200 text-sm font-bold">
+                <div>
+                    <span class="text-slate-500 text-xs block">SKOR SMASH</span>
+                    <span id="gameScore" class="text-2xl text-sky-600 font-display font-extrabold">0</span>
+                </div>
+                <div>
+                    <span class="text-slate-400 text-xs block">WAKTU TERSISA</span>
+                    <span id="gameTimer" class="text-2xl text-pink-500 font-display font-extrabold">20s</span>
+                </div>
+                <div>
+                    <span class="text-slate-400 text-xs block">REKOR KEYLA</span>
+                    <span id="gameHigh" class="text-2xl text-amber-500 font-display font-extrabold">15</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="guestbook" class="py-20 px-4 relative">
+        <div class="max-w-5xl mx-auto space-y-10">
+            
+            <div class="text-center space-y-3">
+                <span class="px-4 py-1.5 rounded-full bg-purple-100 text-purple-800 border border-purple-200 text-xs font-bold uppercase tracking-wider">
+                    Interactive Guestbook
+                </span>
+                <h2 class="font-display text-3xl md:text-5xl font-extrabold text-slate-800">
+                    Tinggalkan Pesan Untuk <span class="glow-text-pastel">Keyla!</span> 💌
+                </h2>
+                <p class="text-slate-600 text-sm max-w-md mx-auto">
+                    Kirim salam, ajakan main badminton bareng, atau kata-kata semangat!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Input Form -->
+                <div class="lg:col-span-5 glass-box-pastel rounded-3xl p-6 border-purple-200 space-y-4">
+                    <h3 class="font-display text-xl font-bold text-slate-800 flex items-center gap-2">
+                        <i class="fa-solid fa-pen-to-square text-sky-500"></i> Tulis Pesan
+                    </h3>
+
+                    <form id="commentForm" onsubmit="handleCommentSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Nama Kamu</label>
+                            <input type="text" id="senderName" required placeholder="Contoh: Budi S." class="w-full px-4 py-3 rounded-xl bg-white border border-sky-200 text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-sky-400 transition-colors">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Pesan Manis / Salam Badminton</label>
+                            <textarea id="senderMessage" required rows="3" placeholder="Contoh: Semangat badmintonnya Keyla! Kapan-kapan mabar badminton yuk!" class="w-full px-4 py-3 rounded-xl bg-white border border-sky-200 text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-sky-400 transition-colors resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-sky-400 to-indigo-400 text-white font-extrabold text-sm shadow-md shadow-sky-300/40 hover:scale-[1.02] active:scale-98 transition-transform flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Kirim Pesan Ke Keyla
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Messages List -->
+                <div class="lg:col-span-7 space-y-4">
+                    <h3 class="font-display text-xl font-bold text-slate-800 flex items-center justify-between">
+                        <span><i class="fa-solid fa-comments text-pink-500"></i> Pesan Masuk</span>
+                        <span id="commentCount" class="text-xs px-3 py-1 rounded-full bg-sky-200 text-sky-800 font-bold">0 Pesan</span>
+                    </h3>
+
+                    <div id="commentsList" class="space-y-3 max-h-[380px] overflow-y-auto pr-2">
+                        <div class="glass-box-pastel rounded-2xl p-4 border-sky-200 space-y-1">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="font-bold text-sky-600">Admin Fanbase Badminton</span>
+                                <span class="text-slate-400">Official</span>
+                            </div>
+                            <p class="text-slate-700 text-xs">Keren banget blog pastelnya Keyla! Tetap semangat tepok bulu 30 menitnya! 🔥🏸</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 px-4 border-t border-sky-200 relative z-10 text-center space-y-4">
+        <div class="flex items-center justify-center gap-4">
+            <a href="https://www.instagram.com/7sky_keyla?stkn=MTFvM3VmNmg2cWtnaw==" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full ig-pastel-btn flex items-center justify-center text-white hover:scale-110 transition-transform shadow-md">
+                <i class="fa-brands fa-instagram text-lg"></i>
+            </a>
+            <a href="#hero" class="w-10 h-10 rounded-full glass-box-pastel flex items-center justify-center text-sky-600 hover:scale-110 transition-transform">
+                <i class="fa-solid fa-shuttlecock text-lg"></i>
+            </a>
+        </div>
+        <p class="text-xs text-slate-500 font-medium">
+            © 2026 Blog Official <span class="text-sky-600 font-bold">Keyla Qhori Agustin</span>. <br>
+            Instagram: <a href="https://www.instagram.com/7sky_keyla?stkn=MTFvM3VmNmg2cWtnaw==" target="_blank" class="text-pink-500 hover:underline">@7sky_keyla</a> • Dibuat khusus untuk pecinta Badminton!
+        </p>
+    </footer>
+
+    <script>
+        // 1. MOBILE MENU LOGIC
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+        // 2. HERO TYPING EFFECT LOGIC
+        const words = ["Badminton Player 🏸", "Instagrammer @7sky_keyla 📸", "30 Min Active Routine ⚡", "100% Fun & Healthy 💪"];
+        let wordIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typingText');
+
+        function typeLoop() {
+            const currentWord = words[wordIdx];
+            if (isDeleting) {
+                typingElement.innerText = currentWord.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                typingElement.innerText = currentWord.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            let typeSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIdx === currentWord.length) {
+                typeSpeed = 1800;
+                isDeleting = true;
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                wordIdx = (wordIdx + 1) % words.length;
+                typeSpeed = 400;
+            }
+
+            setTimeout(typeLoop, typeSpeed);
+        }
+        typeLoop();
+
+        // 3. THREE.JS 3D RACKET ENGINE WITH PASTEL LIGHTING
+        let scene, camera, renderer, racketGroup, shuttlecockGroup;
+        let isSmashing = false;
+        let smashProgress = 0;
+
+        function init3DRacket() {
+            const container = document.getElementById('racket3dBox');
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+
+            scene = new THREE.Scene();
+
+            camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+            camera.position.set(0, 0, 13);
+
+            renderer = new THREE.WebGLRenderer({
+                canvas: document.getElementById('racketCanvas'),
+                alpha: true,
+                antialias: true
+            });
+            renderer.setSize(width, height);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            const ambientLight = new THREE.AmbientLight(0xffffff, 1.1);
+            scene.add(ambientLight);
+
+            const softSkyLight = new THREE.PointLight(0x7dd3fc, 2.0, 40);
+            softSkyLight.position.set(6, 6, 6);
+            scene.add(softSkyLight);
+
+            const softPinkLight = new THREE.PointLight(0xfbcfe8, 1.8, 40);
+            softPinkLight.position.set(-6, -6, 6);
+            scene.add(softPinkLight);
+
+            racketGroup = new THREE.Group();
+
+            const headShape = new THREE.Shape();
+            const rx = 1.9;
+            const ry = 2.5;
+            for (let i = 0; i <= 64; i++) {
+                const theta = (i / 64) * Math.PI * 2;
+                headShape.lineTo(rx * Math.cos(theta), ry * Math.sin(theta));
+            }
+
+            const extrudeSettings = { depth: 0.16, bevelEnabled: true, bevelThickness: 0.06, bevelSize: 0.05, bevelSegments: 3 };
+            const headGeo = new THREE.ExtrudeGeometry(headShape, extrudeSettings);
+            
+            // Pastel Blue Metallic Material
+            const pastelMetalMat = new THREE.MeshPhongMaterial({
+                color: 0x38bdf8,
+                emissive: 0x0284c7,
+                specular: 0xbae6fd,
+                shininess: 80
+            });
+
+            const headMesh = new THREE.Mesh(headGeo, pastelMetalMat);
+            headMesh.position.set(0, 2.4, -0.08);
+            racketGroup.add(headMesh);
+
+            const stringMat = new THREE.MeshBasicMaterial({ color: 0x0284c7, transparent: true, opacity: 0.65 });
+            for (let x = -1.5; x <= 1.5; x += 0.22) {
+                const h = Math.sqrt(Math.max(0, (1 - (x*x)/(rx*rx)) * (ry*ry))) * 2;
+                if (h > 0.4) {
+                    const strGeo = new THREE.CylinderGeometry(0.015, 0.015, h, 6);
+                    const strMesh = new THREE.Mesh(strGeo, stringMat);
+                    strMesh.position.set(x, 2.4, 0);
+                    racketGroup.add(strMesh);
+                }
+            }
+            for (let y = -2.0; y <= 2.0; y += 0.22) {
+                const w = Math.sqrt(Math.max(0, (1 - (y*y)/(ry*ry)) * (rx*rx))) * 2;
+                if (w > 0.4) {
+                    const strGeo = new THREE.CylinderGeometry(0.015, 0.015, w, 6);
+                    const strMesh = new THREE.Mesh(strGeo, stringMat);
+                    strMesh.rotation.z = Math.PI / 2;
+                    strMesh.position.set(0, 2.4 + y, 0);
+                    racketGroup.add(strMesh);
+                }
+            }
+
+            const shaftGeo = new THREE.CylinderGeometry(0.08, 0.08, 3.2, 16);
+            const shaftMesh = new THREE.Mesh(shaftGeo, pastelMetalMat);
+            shaftMesh.position.set(0, -0.2, 0);
+            racketGroup.add(shaftMesh);
+
+            const gripGeo = new THREE.CylinderGeometry(0.18, 0.22, 1.8, 16);
+            const gripMat = new THREE.MeshPhongMaterial({ color: 0x1e293b, specular: 0x93c5fd, shininess: 30 });
+            const gripMesh = new THREE.Mesh(gripGeo, gripMat);
+            gripMesh.position.set(0, -2.6, 0);
+            racketGroup.add(gripMesh);
+
+            racketGroup.rotation.z = -0.15;
+            scene.add(racketGroup);
+
+            shuttlecockGroup = new THREE.Group();
+            const corkGeo = new THREE.SphereGeometry(0.32, 16, 16, 0, Math.PI * 2, 0, Math.PI / 2);
+            const corkMat = new THREE.MeshPhongMaterial({ color: 0xffffff });
+            const corkMesh = new THREE.Mesh(corkGeo, corkMat);
+            corkMesh.rotation.x = Math.PI;
+            shuttlecockGroup.add(corkMesh);
+
+            const coneGeo = new THREE.ConeGeometry(0.65, 0.9, 12, 1, true);
+            const coneMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8, wireframe: true });
+            const coneMesh = new THREE.Mesh(coneGeo, coneMat);
+            coneMesh.position.set(0, 0.45, 0);
+            shuttlecockGroup.add(coneMesh);
+
+            shuttlecockGroup.position.set(2.4, 1.8, 1.2);
+            shuttlecockGroup.rotation.z = -0.4;
+            scene.add(shuttlecockGroup);
+
+            let isDragging = false;
+            let prevMouse = { x: 0, y: 0 };
+
+            const startDrag = (e) => {
+                isDragging = true;
+                prevMouse = {
+                    x: e.clientX || (e.touches && e.touches[0].clientX),
+                    y: e.clientY || (e.touches && e.touches[0].clientY)
+                };
+            };
+
+            const doDrag = (e) => {
+                if (!isDragging) return;
+                const cx = e.clientX || (e.touches && e.touches[0].clientX);
+                const cy = e.clientY || (e.touches && e.touches[0].clientY);
+
+                const dx = cx - prevMouse.x;
+                const dy = cy - prevMouse.y;
+
+                racketGroup.rotation.y += dx * 0.01;
+                racketGroup.rotation.x += dy * 0.01;
+
+                prevMouse = { x: cx, y: cy };
+            };
+
+            const stopDrag = () => { isDragging = false; };
+
+            container.addEventListener('mousedown', startDrag);
+            window.addEventListener('mousemove', doDrag);
+            window.addEventListener('mouseup', stopDrag);
+
+            container.addEventListener('touchstart', startDrag);
+            window.addEventListener('touchmove', doDrag);
+            window.addEventListener('touchend', stopDrag);
+
+            window.addEventListener('resize', () => {
+                const w = container.clientWidth;
+                const h = container.clientHeight;
+                camera.aspect = w / h;
+                camera.updateProjectionMatrix();
+                renderer.setSize(w, h);
+            });
+        }
+
+        function trigger3DSmash() {
+            if (!isSmashing) {
+                isSmashing = true;
+                smashProgress = 0;
+                const txt = document.getElementById('smashTextOverlay');
+                txt.style.opacity = '1';
+                setTimeout(() => { txt.style.opacity = '0'; }, 1000);
+
+                if (typeof confetti === 'function') {
+                    confetti({ 
+                        particleCount: 50, 
+                        spread: 60, 
+                        origin: { y: 0.6 },
+                        colors: ['#7dd3fc', '#93c5fd', '#a7f3d0', '#fbcfe8']
+                    });
+                }
+            }
+        }
+
+        function animate3D() {
+            requestAnimationFrame(animate3D);
+
+            const t = Date.now() * 0.0025;
+
+            if (racketGroup && !isSmashing) {
+                racketGroup.position.y = Math.sin(t) * 0.2;
+                racketGroup.rotation.y += 0.006;
+            }
+
+            if (isSmashing && racketGroup) {
+                smashProgress += 0.18;
+                racketGroup.rotation.x = Math.sin(smashProgress) * 1.5;
+                if (smashProgress >= Math.PI * 2) {
+                    isSmashing = false;
+                    racketGroup.rotation.x = 0;
+                }
+            }
+
+            if (shuttlecockGroup) {
+                shuttlecockGroup.position.y = 1.8 + Math.sin(t * 1.8) * 0.25;
+                shuttlecockGroup.rotation.y += 0.015;
+            }
+
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            init3DRacket();
+            animate3D();
+            loadComments();
+        });
+
+        // 4. MINI GAME LOGIC
+        let gameActive = false;
+        let score = 0;
+        let timeLeft = 20;
+        let gameTimerId = null;
+        let spawnTimerId = null;
+
+        function startGame() {
+            if (gameActive) return;
+            gameActive = true;
+            score = 0;
+            timeLeft = 20;
+
+            document.getElementById('gameScore').innerText = '0';
+            document.getElementById('gameTimer').innerText = '20s';
+            document.getElementById('gameStartScreen').classList.add('hidden');
+
+            const container = document.getElementById('targetContainer');
+            container.innerHTML = '';
+
+            gameTimerId = setInterval(() => {
+                timeLeft--;
+                document.getElementById('gameTimer').innerText = timeLeft + 's';
+                if (timeLeft <= 0) {
+                    endGame();
+                }
+            }, 1000);
+
+            spawnTarget();
+            spawnTimerId = setInterval(spawnTarget, 750);
+        }
+
+        function spawnTarget() {
+            if (!gameActive) return;
+            const container = document.getElementById('targetContainer');
+            
+            const target = document.createElement('div');
+            target.className = 'absolute w-12 h-12 flex items-center justify-center text-3xl cursor-pointer select-none animate-bounce transition-transform hover:scale-125';
+            target.innerText = '🏸';
+
+            const maxX = container.clientWidth - 50;
+            const maxY = container.clientHeight - 80;
+
+            const x = Math.floor(Math.random() * maxX);
+            const y = Math.floor(Math.random() * maxY);
+
+            target.style.left = x + 'px';
+            target.style.top = y + 'px';
+
+            target.onclick = (e) => {
+                e.stopPropagation();
+                score += 1;
+                document.getElementById('gameScore').innerText = score;
+                target.remove();
+
+                if (typeof confetti === 'function') {
+                    confetti({ 
+                        particleCount: 15, 
+                        spread: 40, 
+                        origin: { x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight },
+                        colors: ['#38bdf8', '#818cf8', '#f472b6']
+                    });
+                }
+            };
+
+            container.appendChild(target);
+
+            setTimeout(() => {
+                if (target.parentNode) target.remove();
+            }, 1200);
+        }
+
+        function endGame() {
+            gameActive = false;
+            clearInterval(gameTimerId);
+            clearInterval(spawnTimerId);
+
+            document.getElementById('targetContainer').innerHTML = '';
+            document.getElementById('gameStartScreen').classList.remove('hidden');
+
+            const currentHigh = parseInt(document.getElementById('gameHigh').innerText) || 0;
+            if (score > currentHigh) {
+                document.getElementById('gameHigh').innerText = score;
+                alert(`🎉 LUAR BIASA! Rekor Baru: ${score} Smash! Keyla bangga sama kamu!`);
+            } else {
+                alert(`Game Selesai! Kamu berhasil melakukan ${score} Smash! Coba lagi yuk!`);
+            }
+        }
+
+        // 5. GUESTBOOK LOGIC
+        function handleCommentSubmit(e) {
+            e.preventDefault();
+            const nameInput = document.getElementById('senderName');
+            const msgInput = document.getElementById('senderMessage');
+
+            const name = nameInput.value.trim();
+            const msg = msgInput.value.trim();
+
+            if (!name || !msg) return;
+
+            const newComment = { name, msg, time: 'Baru Saja' };
+            saveComment(newComment);
+
+            nameInput.value = '';
+            msgInput.value = '';
+
+            if (typeof confetti === 'function') {
+                confetti({ 
+                    particleCount: 40, 
+                    spread: 70,
+                    colors: ['#7dd3fc', '#a7f3d0', '#fbcfe8']
+                });
+            }
+        }
+
+        function saveComment(comment) {
+            let comments = JSON.parse(localStorage.getItem('keyla_comments') || '[]');
+            comments.unshift(comment);
+            localStorage.setItem('keyla_comments', JSON.stringify(comments));
+            renderComments();
+        }
+
+        function loadComments() {
+            renderComments();
+        }
+
+        function renderComments() {
+            const list = document.getElementById('commentsList');
+            const countTag = document.getElementById('commentCount');
+            let comments = JSON.parse(localStorage.getItem('keyla_comments') || '[]');
+
+            countTag.innerText = (comments.length + 1) + ' Pesan';
+
+            let html = `
+                <div class="glass-box-pastel rounded-2xl p-4 border-sky-200 space-y-1">
+                    <div class="flex items-center justify-between text-xs">
+                        <span class="font-bold text-sky-600">Admin Fanbase Badminton</span>
+                        <span class="text-slate-400">Official</span>
+                    </div>
+                    <p class="text-slate-700 text-xs">Keren banget blog pastelnya Keyla! Follow IG nya <a href="https://www.instagram.com/7sky_keyla?stkn=MTFvM3VmNmg2cWtnaw==" target="_blank" class="text-pink-500 font-bold hover:underline">@7sky_keyla</a> juga yuk! 🔥🏸</p>
+                </div>
+            `;
+
+            comments.forEach(c => {
+                html += `
+                    <div class="glass-box-pastel rounded-2xl p-4 border-purple-200 space-y-1 animate-fadeIn">
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="font-bold text-indigo-500">${escapeHtml(c.name)}</span>
+                            <span class="text-slate-400">${c.time}</span>
+                        </div>
+                        <p class="text-slate-700 text-xs">${escapeHtml(c.msg)}</p>
+                    </div>
+                `;
+            });
+
+            list.innerHTML = html;
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+        }
+    </script>
+</body>
+</html>
